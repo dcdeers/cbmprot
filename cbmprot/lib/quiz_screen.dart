@@ -67,15 +67,16 @@ class _QuizScreenState extends State<QuizScreen> {
         width: double.infinity,
         padding: const EdgeInsets.all(32),
         decoration: BoxDecoration(
-          color: Colors.orange,
+          color: Colors.white,
           borderRadius:  BorderRadius.circular(16),
         ),
 
         child: Text(
           questionList[currentQuestionIndex].questionText,
           style: const TextStyle(
-          color: Colors.white,
-          fontSize: 18,
+          color: Color.fromRGBO(0, 194, 203, 100),
+          fontSize: 16,
+          fontFamily: 'IBMPlexMono',
           fontWeight: FontWeight.w600,
           )
         )         
@@ -96,93 +97,172 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  Widget _answerButton(Answer answer){
+  Widget _answerButton(Answer answer) {
+  bool isSelected = answer == selectedAnswer;
 
-    bool isSelected = answer == selectedAnswer;
+  return Container(
+    width: double.infinity,
+    margin: const EdgeInsets.symmetric(vertical: 8),
+    height: 48,
 
-
-
-    return Container(
-      width: double.infinity,
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      height: 48,
-      child: ElevatedButton(
-        child: Text(answer.answerText),
-        style: ElevatedButton.styleFrom(
-          foregroundColor: isSelected ? Colors.white : Colors.black, backgroundColor: isSelected ? Colors.orangeAccent : Colors.white, shape: const StadiumBorder(),
+    child: ElevatedButton(
+      child: Text(
+        answer.answerText,
+        style: TextStyle(
+          fontFamily: 'IBMPlexMono', // Set your custom font family
+          fontSize: 18,             // Optionally adjust the font size
+          color: isSelected ? Colors.black : Colors.white, // Text color based on selection
         ),
-        onPressed: (){
+      ),
 
-          if(selectedAnswer == null){
-            if(answer.isCorrect){
-              score++;
-            }
+      style: ElevatedButton.styleFrom(
+        foregroundColor: isSelected ? Colors.black : Colors.white,
+        backgroundColor: isSelected ? Colors.white : Color.fromRGBO(0, 194, 203, 100),
+        shape: const StadiumBorder(),
+        fixedSize: const Size(120, 40),
+      ),
 
-            setState(() {
+      onPressed: () {
+
+        if (selectedAnswer == null) {
+          if (answer.isCorrect) {
+            score++;
+          }
+
+          setState(() {
             selectedAnswer = answer;
-            });
+          });
+        }
 
-          }
+      },
+    ),
+  );
+}
+
+  // Widget _answerButton(Answer answer){
+
+  //   bool isSelected = answer == selectedAnswer;
+
+  //   return Container(
+  //     width: double.infinity,
+  //     margin: const EdgeInsets.symmetric(vertical: 8),
+  //     height: 48,
+  //     child: ElevatedButton(
+  //       child: Text(answer.answerText),
+        
+  //       style: ElevatedButton.styleFrom(
+  //         foregroundColor: isSelected ? Colors.black : Colors.white , backgroundColor: isSelected ? Colors.white : Color.fromRGBO(0, 194, 203, 100),
+  //          shape: const StadiumBorder(), fixedSize: Size(120, 40),
+  //       ),
+
+  //         onPressed: (){
+
+  //           if(selectedAnswer == null){
+  //             if(answer.isCorrect){
+  //               score++;
+  //             }
+
+  //             setState(() {
+  //             selectedAnswer = answer;
+  //             });
+
+  //           }
 
 
-          
-        },
-        ),
-    );
+  //         },
+  //     ),
+  //   );
 
+  // }
+
+  // _nextButton(){
+
+  //    bool isLastQuestion = false;
+
+  //    if (currentQuestionIndex == questionList.length - 1) {
+  //     isLastQuestion = true;
+  //     }
+
+  //   return Container(
+  //     width: MediaQuery.of(context).size.width * 0.5,
+  //     height: 48,
+  //     child: ElevatedButton(
+  //       child: Text(isLastQuestion ? "Submit" : "Next"),
+  //       style: ElevatedButton.styleFrom(
+  //         foregroundColor: Colors.white, backgroundColor: Color.fromRGBO(87, 255, 124, 100), shape: const StadiumBorder(),
+  //       ),
+  //       onPressed: (){
+
+  //         if(isLastQuestion){
+  //           //disp score
+
+  //           showDialog(context: context, builder: (_) => _showScoreDialog());
+  //         }else{
+  //           //nest ques
+
+  //           setState(() {
+  //             selectedAnswer = null;
+  //             currentQuestionIndex++;
+
+  //           });
+  //         }
+
+  //       },
+  //       ),
+  //   );
+  // }
+
+ _nextButton() {
+  bool isLastQuestion = false;
+
+  if (currentQuestionIndex == questionList.length - 1) {
+    isLastQuestion = true;
   }
 
-  _nextButton(){
-
-     bool isLastQuestion = false;
-
-     if (currentQuestionIndex == questionList.length - 1) {
-      isLastQuestion = true;
-      }
-
-
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      height: 48,
-      child: ElevatedButton(
-        child: Text(isLastQuestion ? "Submit" : "Next"),
-        style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.black, backgroundColor: Colors.blueAccent, shape: const StadiumBorder(),
+  return Container(
+    width: MediaQuery.of(context).size.width * 0.5,
+    height: 48,
+    child: ElevatedButton(
+      child: Text(
+        isLastQuestion ? "Submit" : "Next",
+        style: TextStyle(
+          fontFamily: 'IBMPlexMono', // Use your custom font family here
+          fontSize: 18,             // Adjust the font size if needed
+          color: Colors.white,       // Text color
         ),
-        onPressed: (){
-
-          if(isLastQuestion){
-            //disp score
-
-            showDialog(context: context, builder: (_) => _showScoreDialog());
-          }else{
-            //nest ques
-
-            setState(() {
-              selectedAnswer = null;
-              currentQuestionIndex++;
-
-            });
-          }
-
-        },
-        ),
-    );
-  }
-
-
+      ),
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(87, 255, 124, 100),
+        shape: const StadiumBorder(),
+      ),
+      onPressed: () {
+        if (isLastQuestion) {
+          // Display score
+          showDialog(context: context, builder: (_) => _showScoreDialog());
+        } else {
+          // Move to the next question
+          setState(() {
+            selectedAnswer = null;
+            currentQuestionIndex++;
+          });
+        }
+      },
+    ),
+  );
+}
+ 
   _showScoreDialog(){
     bool isPassed = false;
 
-    if (score >= questionList.length * 0.6){
+    if (score >= questionList.length * 0.5){
 
-      //pass if 60 %
+      //pass if 50 %
       isPassed = true;
 
     }
 
-    String title = isPassed ? "Passed" : "Failed";
-
+    String title = isPassed ? "You've Passed" : "You've Failed";
 
     return AlertDialog(
       title: Text(title + "| Score is $score", 
@@ -199,6 +279,7 @@ class _QuizScreenState extends State<QuizScreen> {
           currentQuestionIndex = 0;
           score = 0;
           selectedAnswer = null;
+
         });
 
       }, 

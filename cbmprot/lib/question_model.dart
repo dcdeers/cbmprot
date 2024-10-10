@@ -17,7 +17,7 @@ List<Question> getQuestions() {
   //ADD questions and answer here
 
   list.add(Question(
-    "Who is the owner of Flutter?",
+    "The practice of sending email to users with the purpose of tricking them into revealing personal information or clicking on a link.",
     [
       Answer("Nokia", false),
       Answer("Samsung", false),
@@ -47,6 +47,38 @@ List<Question> getQuestions() {
   ));
 
   list.add(Question(
+    "Flutter user dart as a language?",
+    [
+      Answer("True", true),
+      Answer("False", false),
+    ],
+  ));
+
+   list.add(Question(
+    "Flutter user dart as a language?",
+    [
+      Answer("True", true),
+      Answer("False", false),
+    ],
+  ));
+
+   list.add(Question(
+    "Flutter user dart as a language?",
+    [
+      Answer("True", true),
+      Answer("False", false),
+    ],
+  ));
+
+   list.add(Question(
+    "Flutter user dart as a language?",
+    [
+      Answer("True", true),
+      Answer("False", false),
+    ],
+  ));
+
+   list.add(Question(
     "Flutter user dart as a language?",
     [
       Answer("True", true),
