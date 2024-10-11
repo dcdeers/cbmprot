@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+
 
 class HomePage extends StatelessWidget{
 
@@ -23,25 +26,32 @@ class HomePage extends StatelessWidget{
     Colors.red,
   ];
 
-  List<Icon> catIcons = [
+// List<FaIcon> catIcons = [
+//   FaIcon(FontAwesomeIcons.squareCheck, color: Colors.white, size: 30), // Dashboard
+//   FaIcon(FontAwesomeIcons.gamepad, color: Colors.white, size: 30), // Gamepad
+//   FaIcon(FontAwesomeIcons.bullhorn, color: Colors.white, size: 30), // Assessment
+//   FaIcon(FontAwesomeIcons.listAlt, color: Colors.white, size: 30), // Category
+//   FaIcon(FontAwesomeIcons.video, color: Colors.white, size: 30), // Video Library
+//   FaIcon(FontAwesomeIcons.tasks, color: Colors.white, size: 30), // Assessment (alternative)
+// ];
 
-    Icon(Icons.category, color: Colors.white, size: 30),
-    Icon(Icons.video_library, color: Colors.white, size: 30),
-    Icon(Icons.assessment, color: Colors.white, size: 30),
-    Icon(Icons.category, color: Colors.white, size: 30),
-    Icon(Icons.video_library, color: Colors.white, size: 30),
-    Icon(Icons.assessment, color: Colors.white, size: 30),
-  ];
 
-  List imgList = [
 
-    '1',
-    '2',
+List<Icon> catIcons = [
+  Icon(LineAwesomeIcons.clipboard_check_solid, color: Colors.white, size: 50), // Dashboard
+  Icon(LineAwesomeIcons.brain_solid, color: Colors.white, size: 50), // Assessment
+  Icon(LineAwesomeIcons.newspaper_solid, color: Colors.white, size: 50), // Category
+  Icon(LineAwesomeIcons.list_alt_solid, color: Colors.white, size: 50), // Video Library
+  Icon(LineAwesomeIcons.list_alt_solid, color: Colors.white, size: 30), // Video Library
+];
+
+
+  List imgList = [ //icons list page
+
     '3',
     '4',
     '5',
     '6',
-    '1',
   ];
 
   @override
@@ -53,7 +63,7 @@ class HomePage extends StatelessWidget{
       body: ListView(
 
         children: [
-
+          
           Container(
 
             padding: EdgeInsets.only(top: 15, left: 15, right: 15, bottom: 10),
@@ -199,26 +209,29 @@ class HomePage extends StatelessWidget{
 
                       child: Column(
 
+                        mainAxisAlignment: MainAxisAlignment.center,
+
                         children: [
+                          // Use the icon from catIcons
 
                           Padding(
 
                             padding: EdgeInsets.all(10),
-                            child: Image.asset("images/${imgList[index]}.png", width: 100, height: 100,),
+                            child: catIcons[index], // Using the FaIcon from the list
                           ),
 
-                          SizedBox(height: 10),
-                          Text(
+                          // SizedBox(height: 10),
+                          // Text(
 
-                            imgList[index],
-                            style: TextStyle(
+                          //   "Icon ${index + 1}", // Change this to your desired titles
+                          //   style: TextStyle(
 
-                              fontFamily: 'IBMPlexMono',
-                              fontSize: 22,
-                              color: Colors.amber,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                          //     fontFamily: 'IBMPlexMono',
+                          //     fontSize: 22,
+                          //     color: Colors.amber,
+                          //     fontWeight: FontWeight.w600,
+                          //   ),
+                          // ),
 
                           SizedBox(height: 10),
                           Text(
@@ -226,7 +239,7 @@ class HomePage extends StatelessWidget{
                             "TEST VID",
                             style: TextStyle(
   
-                              fontSize: 15,
+                              fontSize: 20,
                               color: Colors.lime,
                               fontWeight: FontWeight.w500,
                             ),
@@ -244,3 +257,13 @@ class HomePage extends StatelessWidget{
     );
   }
 }
+
+
+
+
+
+
+
+
+
+

@@ -1,96 +1,231 @@
+// import 'package:cbmprot/screens/home.dart';
+// import 'package:flutter/material.dart';
+
+// class WelcomeScreen extends StatelessWidget{
+
+//   @override
+
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+
+//     return Material(
+
+//       child: Container(
+
+//         width: MediaQuery.of(context).size.width,
+//         height: MediaQuery.of(context).size.height,
+//         child: Stack(
+
+//           children: [
+
+//             Stack(children: [
+
+//                 Container(
+
+//                   width: MediaQuery.of(context).size.width,
+//                   height: MediaQuery.of(context).size.height / 1.6,
+//                   decoration: BoxDecoration(
+//                     color: Colors.white
+//                   ),
+
+//                   child: Center(child: Image.asset("images/1.png", width: 300, height: 300,)),
+//                 ),
+//               ],
+//             ),
+
+//             Align(
+//               alignment: Alignment.bottomCenter,
+//               child: Container(
+//                 width: MediaQuery.of(context).size.width,
+//                 height: MediaQuery.of(context).size.height / 2.666,
+//                 decoration: BoxDecoration(
+//                   color: Colors.purple, 
+//                 ),
+//               ),
+//             ),
+
+//               Align(
+//                 alignment: Alignment.bottomCenter,
+//                 child: Container(
+//                   width: MediaQuery.of(context).size.width,
+//                   height: MediaQuery.of(context).size.height / 2.666,
+//                   padding: EdgeInsets.only(top: 40, bottom: 30),
+//                   decoration: BoxDecoration(
+//                     color: Colors.black, 
+//                     borderRadius: BorderRadius.only(topLeft: Radius.circular(70))
+//                   ),
+
+//                     child: Column(children: [
+//                       Text("Version 1.0", 
+//                       style: TextStyle(fontSize: 20, 
+//                       fontFamily: 'IBMPlexMono', 
+//                       fontWeight: FontWeight.w600, 
+//                       color: Colors.white,
+//                           ),
+//                         ),
+
+//                         SizedBox(height: 60),
+//                         Material(
+//                           color: Colors.cyan,
+//                           borderRadius: BorderRadius.circular(10),
+//                           child: InkWell(
+//                             onTap: (){
+//                               Navigator.push(context, MaterialPageRoute(
+//                                 builder: (context) => HomePage(),
+//                               ));
+//                             },
+//                             child: Container(
+//                               padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+//                               child: Text("Get Started", style: TextStyle(color: Colors.white, fontFamily: 'IBMPlexMono',fontWeight: FontWeight.w600,),),
+//                             ),
+//                           ),
+//                         )
+//                       ],
+//                     ),
+//                 ),
+//               ),
+
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+// }
+
 import 'package:cbmprot/screens/home.dart';
 import 'package:flutter/material.dart';
 
-class WelcomeScreen extends StatelessWidget{
+class WelcomeScreen extends StatelessWidget {
 
   @override
+
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Material(
+
       child: Container(
+
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Stack(
+
           children: [
-            Stack(children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 1.6,
-                decoration: BoxDecoration(
-                  color: Colors.white
-                ),
-              ),
 
-                            Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 1.6,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(70))
-                ),
+            // Top image section
+            Container(
 
-                child: Center(child: Image.asset("images/1.png", scale: 0.5,)),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 1.6,
+              decoration: BoxDecoration(color: Colors.white),
+              child: Center(
 
-              ),
-            ],
-          ),
+                child: ClipRRect(
 
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 2.666,
-                  decoration: BoxDecoration(
-                    color: Colors.purple, 
+                  borderRadius: BorderRadius.circular(15), // Adjust the radius as needed
+                  child: Image.asset(
+
+                    "images/1.png",
+                    width: 300,
+                    height: 300,
+                    fit: BoxFit.cover, // Ensures the image fills the space properly
                   ),
                 ),
               ),
+            ),
 
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 2.666,
-                  padding: EdgeInsets.only(top: 40, bottom: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.black, 
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(70))
+            // // Purple background section
+            // Align(
+
+            //   alignment: Alignment.bottomCenter,
+            //   child: Container(
+
+            //     width: MediaQuery.of(context).size.width,
+            //     height: MediaQuery.of(context).size.height / 2.666,
+            //     decoration: BoxDecoration(color: Colors.purple),
+            //   ),
+            // ),
+
+            // Bottom content section
+            Align(
+
+              alignment: Alignment.bottomCenter,
+              child: Container(
+
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 2.666,
+                padding: EdgeInsets.only(top: 40, bottom: 30),
+                decoration: BoxDecoration(
+
+                  color: Colors.black,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(70),
                   ),
+                ),
 
-                    child: Column(children: [
-                      Text("Version 1.0", 
-                      style: TextStyle(fontSize: 20, 
-                      fontFamily: 'IBMPlexMono', 
-                      fontWeight: FontWeight.w600, 
-                      color: Colors.white,
+                child: Column(
+
+                  children: [
+
+                    Text(
+                      
+                      "Version 1.0",
+                      style: TextStyle(
+
+                        fontSize: 20,
+                        fontFamily: 'IBMPlexMono',
+                        color: Colors.white,
+                      ),
+                    ),
+
+                    SizedBox(height: 60),
+                    Material(
+
+                      color: Color.fromRGBO(0, 194, 203, 100),
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+
+                        onTap: () {
+
+                          Navigator.push(
+
+                            context,
+                            MaterialPageRoute(
+
+                              builder: (context) => HomePage(),
+                            ),
+                          );
+                        },
+
+                        child: Container(
+
+                          padding: EdgeInsets.symmetric(
+
+                            vertical: 15,
+                            horizontal: 80,
                           ),
-                        ),
 
-                        SizedBox(height: 60),
-                        Material(
-                          color: Colors.cyan,
-                          borderRadius: BorderRadius.circular(10),
-                          child: InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ));
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
-                              child: Text("Get Started", style: TextStyle(color: Colors.white, fontFamily: 'IBMPlexMono',fontWeight: FontWeight.w600,),),
+                          child: Text(
+
+                            "Get Started",
+                            style: TextStyle(
+
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: 'IBMPlexMono',
                             ),
                           ),
-                        )
-                      ],
+                        ),
+                      ),
                     ),
+                  ],
                 ),
               ),
-
+            ),
           ],
         ),
       ),
     );
   }
+}
 
-}           
