@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget{
     'Free Courses',
     'Free Courses',
     'Free Courses',
-
   ];
 
   List<Color> catColors = [
@@ -22,7 +21,6 @@ class HomePage extends StatelessWidget{
     Colors.yellow,
     Colors.green,
     Colors.red,
-
   ];
 
   List<Icon> catIcons = [
@@ -33,17 +31,34 @@ class HomePage extends StatelessWidget{
     Icon(Icons.category, color: Colors.white, size: 30),
     Icon(Icons.video_library, color: Colors.white, size: 30),
     Icon(Icons.assessment, color: Colors.white, size: 30),
+  ];
 
+  List imgList = [
+
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '1',
   ];
 
   @override
+
   Widget build(BuildContext context){
+
     return Scaffold(
+
       body: ListView(
+
         children: [
+
           Container(
+
             padding: EdgeInsets.only(top: 15, left: 15, right: 15, bottom: 10),
             decoration: BoxDecoration(
+
               color: Colors.cyan,
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20),),
             ),
@@ -52,18 +67,20 @@ class HomePage extends StatelessWidget{
 
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 Row(
 
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.dashboard, size: 30,color: Colors.black,),
 
+                    Icon(Icons.dashboard, size: 30,color: Colors.black,),
                     Icon(Icons.notifications, size: 30,color: Colors.black,),
                   ],
                 ),
 
                 SizedBox(height: 20),
                 Padding(
+
                   padding: EdgeInsets.only(left: 3, bottom: 15),
                   child: Text("Hello User", style: TextStyle(color: Colors.white, fontFamily: 'IBMPlexMono',fontWeight: FontWeight.w600,),),
                 ),
@@ -75,24 +92,22 @@ class HomePage extends StatelessWidget{
                   height: 55,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
+
                     color: Colors.purple,
                     borderRadius: BorderRadius.circular(10),
-
                   ),
 
                   child: TextFormField(
+
                     decoration: InputDecoration(
+
                       border: InputBorder.none,
                       hintText: "search here....",
                       hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
-
                       prefixIcon: Icon(Icons.search, size: 25,),
-
                     ),
                   ),
-                ),
-                
-
+                ),  
               ],
             ),
           ),
@@ -138,13 +153,9 @@ class HomePage extends StatelessWidget{
                         catNames[index],
                         style: TextStyle(color: Colors.black, fontFamily: 'IBMPlexMono',fontWeight: FontWeight.w600,),
                       ),
-                    ],
-                    
-
+                    ],                    
                   );
                 },
-
-
               ),
 
               Row(
@@ -155,18 +166,81 @@ class HomePage extends StatelessWidget{
                   Text("What is this?", style: TextStyle(color: Colors.red, fontFamily: 'IBMPlexMono',fontWeight: FontWeight.w600,),),
 
                   Text("Whon is this?", style: TextStyle(color: Colors.blue, fontFamily: 'IBMPlexMono',fontWeight: FontWeight.w600,),),
-
-
                 ],
               ),
 
-              SizedBox()
+              SizedBox(height: 10),
+              GridView.builder(
 
+                itemCount: imgList.length,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+
+                  crossAxisCount: 2,
+                  childAspectRatio: (MediaQuery.of(context).size.height - 50 - 25) / (4 * 240),
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                ),
+
+                itemBuilder: (context, index){
+
+                  return InkWell(
+
+                    onTap: (){},
+                    child: Container(
+
+                      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                      decoration: BoxDecoration(
+
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.green,                        
+                      ),
+
+                      child: Column(
+
+                        children: [
+
+                          Padding(
+
+                            padding: EdgeInsets.all(10),
+                            child: Image.asset("images/${imgList[index]}.png", width: 100, height: 100,),
+                          ),
+
+                          SizedBox(height: 10),
+                          Text(
+
+                            imgList[index],
+                            style: TextStyle(
+
+                              fontFamily: 'IBMPlexMono',
+                              fontSize: 22,
+                              color: Colors.amber,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+
+                          SizedBox(height: 10),
+                          Text(
+                            
+                            "TEST VID",
+                            style: TextStyle(
+  
+                              fontSize: 15,
+                              color: Colors.lime,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }
+              ),
             ],),
           ),
         ],
       ),
     );
-
   }
 }
