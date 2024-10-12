@@ -217,6 +217,7 @@
 
 import 'package:cbmprot/question_model.dart';
 import 'package:flutter/material.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class QuizScreen extends StatefulWidget {
   @override
@@ -230,15 +231,66 @@ class _QuizScreenState extends State<QuizScreen> {
   int score = 0;
   Answer? selectedAnswer;
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     appBar: AppBar(
+  //       title: const Text('back'),
+        
+  //       foregroundColor: Colors.white,
+  //       backgroundColor: Colors.black, // Customize as needed
+  //       leading: IconButton(
+
+  //         icon: const Icon(LineAwesomeIcons.long_arrow_alt_left_solid, size: 50,), // Use Line Awesome icon, size changed
+
+
+          
+  //         onPressed: () {
+  //           Navigator.pop(context); // Go back to the previous screen
+  //         },
+  //       ),
+  //     ),
+  //     backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+  //     body: Container(
+  //       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
+  //       child: Column(
+  //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //         children: [
+  //           const Text(
+  //             "CYBERMIND",
+  //             style: TextStyle(
+  //                 color: Color.fromRGBO(0, 194, 203, 100),
+  //                 fontSize: 50,
+  //                 fontFamily: 'IBMPlexMono'),
+  //           ),
+  //           _questionWidget(),
+  //           _answerList(),
+  //           _nextButton(),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('back'),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 8), // Padding to move the text down
+          child: const Text(
+            'Back', // Title text
+            style: TextStyle(
+              fontSize: 20, // Change the font size
+              fontFamily: 'IBMPlexMono', // Use your custom font family
+              color: Colors.white, // Text color
+            ),
+          ),
+        ),
         foregroundColor: Colors.white,
-        backgroundColor: Colors.amber, // Customize as needed
-        leading: BackButton(
-          
+        backgroundColor: Colors.black, // Customize as needed
+        leading: IconButton(
+          icon: const Icon(LineAwesomeIcons.long_arrow_alt_left_solid, size: 50,), // Line Awesome icon with size change
           onPressed: () {
             Navigator.pop(context); // Go back to the previous screen
           },
@@ -250,13 +302,20 @@ class _QuizScreenState extends State<QuizScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              "CYBERMIND",
-              style: TextStyle(
-                  color: Color.fromRGBO(0, 194, 203, 100),
-                  fontSize: 50,
-                  fontFamily: 'IBMPlexMono'),
+            Image.asset(
+              'images/1.png', // Replace with your image path
+              width: 130, // Set the desired width for the image
+              height: 130, // Set the desired height for the image
             ),
+            // const Text(
+            //   "CYBERMIND",
+            //   style: TextStyle(
+            //     color: Color.fromRGBO(0, 194, 203, 100),
+            //     fontSize: 50,
+            //     letterSpacing: 2.0,
+            //     fontFamily: 'IBMPlexMono',
+            //   ),
+            // ),
             _questionWidget(),
             _answerList(),
             _nextButton(),
@@ -265,6 +324,8 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
     );
   }
+
+
 
   _questionWidget() {
     return Column(
@@ -275,7 +336,7 @@ class _QuizScreenState extends State<QuizScreen> {
           "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}",
           style: const TextStyle(
             color: Color.fromRGBO(0, 194, 203, 100),
-            fontSize: 25,
+            fontSize: 20,
             fontFamily: 'IBMPlexMono',
             fontWeight: FontWeight.w600,
           ),
@@ -366,6 +427,7 @@ class _QuizScreenState extends State<QuizScreen> {
             color: Colors.white,
           ),
         ),
+        
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
           backgroundColor: Color.fromRGBO(87, 255, 124, 100),
