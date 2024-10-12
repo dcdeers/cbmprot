@@ -2,7 +2,6 @@ import 'package:cbmprot/quiz_screen.dart';
 import 'package:cbmprot/screens/enter.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
