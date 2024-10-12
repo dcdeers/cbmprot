@@ -1,3 +1,5 @@
+import 'package:cbmprot/quiz_screen.dart';
+import 'package:cbmprot/screens/learnscrn.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -90,7 +92,24 @@ class HomePage extends StatelessWidget {
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+
+                        // Navigate to different pages based on the index
+                        if (index == 0) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => QuizScreen()),
+                          );
+                        } else if (index == 2) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LearnScreen()),
+                          );
+                        }
+                        // Add more conditions for other indexes
+
+
+                      },
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                         decoration: BoxDecoration(
