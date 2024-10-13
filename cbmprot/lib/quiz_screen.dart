@@ -298,7 +298,7 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
