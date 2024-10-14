@@ -413,6 +413,10 @@ class LearnScreen extends StatelessWidget {
                           child: Image.asset(
                             imgList[index],  // Use image from imgList
                             fit: BoxFit.cover, // Ensure the image covers the entire grid item
+
+
+
+                            
                           ),
                         ),
                       ),
