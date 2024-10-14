@@ -1,51 +1,6 @@
-// import 'package:cbmprot/screens/learnscreen.dart';
-// import 'package:flutter/material.dart';
-
-// class AttackScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Simple ListView'),
-//       ),
-//       body: ListView(
-//         children: <Widget>[
-//           _buildListItem('Item 1', () {
-//             print('Item 1 tapped');
-//           }),
-//           _buildListItem('Item 2', () {
-//             print('Item 2 tapped');
-//           }),
-//           _buildListItem('Item 3', () {
-//             print('Item 3 tapped');
-//           }),
-//           _buildListItem('Item 4', () {
-//             print('Item 4 tapped');
-//           }),
-//         ],
-//       ),
-//     );
-//   }
-
-//   // Helper function to build each list item
-//   Widget _buildListItem(String title, Function() onTap) {
-//     return ListTile(
-//       title: Text(title),
-//       onTap: onTap,
-//     );
-//   }
-// }
-
-// void main() {
-//   runApp(MaterialApp(
-//     home: LearnScreen(),
-//   ));
-// }
-
-
 import 'package:flutter/material.dart';
 
-class AttackScreen extends StatelessWidget {
+class SecurityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,8 +63,7 @@ class AttackScreen extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-          fontFamily: 'Courier',
-          fontWeight: FontWeight.bold, // Monospace font to match the style
+          fontFamily: 'Courier', // Monospace font to match the style
           fontSize: 24, // Font size to match the screenshot
           color: Colors.black, // Text color
         ),
@@ -120,6 +74,6 @@ class AttackScreen extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(
-    home: AttackScreen(),
+    home: SecurityScreen(),
   ));
 }

@@ -119,7 +119,7 @@ class HomePage extends StatelessWidget {
                               catNames[index],
                               style: TextStyle(
                                 fontFamily: 'IBMPlexMono',
-                                fontSize: 20,
+                                fontSize: 23,
                                 color: Colors.cyanAccent,
                                 letterSpacing: 2.0, // Adjust the value for more or less spacing
                               ),
