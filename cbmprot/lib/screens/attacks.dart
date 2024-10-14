@@ -109,6 +109,7 @@ class AttackScreen extends StatelessWidget {
         title,
         style: TextStyle(
           fontFamily: 'Courier',
+          letterSpacing: 1.5, // Adjust the value for more or less spacing
           fontWeight: FontWeight.bold, // Monospace font to match the style
           fontSize: 24, // Font size to match the screenshot
           color: Colors.black, // Text color
