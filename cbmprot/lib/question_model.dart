@@ -21,7 +21,7 @@ List<Question> getQuestions() {
     [
       Answer("Nokia", false),
       Answer("Samsung", false),
-      Answer("Google", true),
+      Answer("Phishing", true),
       Answer("Apple", false),
     ],
   ));

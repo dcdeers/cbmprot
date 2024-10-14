@@ -74,6 +74,7 @@ class HomePage extends StatelessWidget {
               children: [
                 SizedBox(height: 20),
                 GridView.builder(
+                  
                   itemCount: imgList.length,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
