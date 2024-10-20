@@ -187,7 +187,7 @@
 //   }
 // }
 
-import 'package:cbmprot/quizscreens/quizattackscreen.dart';
+import 'package:cbmprot/quizscreens/quizscreen.dart';
 import 'package:cbmprot/screens/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:cbmprot/model/model.dart';
