@@ -1,4 +1,5 @@
-import 'package:cbmprot/quiz_screen.dart';
+import 'package:cbmprot/screens/category.dart';
+import 'package:cbmprot/screens/quizscreen.dart';
 import 'package:cbmprot/screens/learnscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -91,7 +92,7 @@ class HomePage extends StatelessWidget {
                         if (index == 0) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => QuizScreen()),
+                            MaterialPageRoute(builder: (context) => CategoryScreen()),
                           );
                         } else if (index == 2) {
                           Navigator.push(

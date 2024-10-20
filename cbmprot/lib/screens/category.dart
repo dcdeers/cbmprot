@@ -4,14 +4,28 @@ import 'package:cbmprot/screens/security.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
-class LearnScreen extends StatelessWidget {
+class CategoryScreen extends StatelessWidget {
   // Static data lists
   // Replace the icons list with image asset paths
   final List<String> imgList = [
-    'images/CATTACK.png',  // Path to your image
-    'images/MALWARE.png',  // Path to your image
-    'images/SCOM.png',     // Path to your image
-    'images/COMPORT.png',  // Path to your image
+    'images/3.png',  // Path to your image
+    'images/4.png',  // Path to your image
+    'images/5.png',     // Path to your image
+    'images/6.png',  // Path to your image
+  ];
+
+  final List<String> titles = [
+    'Attack Types',
+    'Malware',
+    'Security Components',
+    'Common Ports',
+  ];
+
+  final List<Widget> screens = [
+    AttackScreen(),
+    MalwareScreen(),
+    SecurityScreen(),
+    MalwareScreen(),
   ];
 
   @override
@@ -56,7 +70,7 @@ class LearnScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: Text(
-                'Select a Topic to Learn',
+                'Test Yourself',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 24,
@@ -76,53 +90,49 @@ class LearnScreen extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 20),
-                  GridView.builder(
+                  ListView.builder(
                     itemCount: imgList.length,
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside GridView
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // Number of columns
-                      childAspectRatio: 1, // 1 for square items
-                      mainAxisSpacing: 40,
-                      crossAxisSpacing: 20,
-                    ),
+                    physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside ListView
                     itemBuilder: (context, index) {
-                      return InkWell(
-                        onTap: () {
-                          // Navigate to different pages based on the index
-                          if (index == 0) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: InkWell(
+                          onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => AttackScreen()),
+                              MaterialPageRoute(builder: (context) => screens[index]),
                             );
-                          } else if (index == 1) { // New page for index 1
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => MalwareScreen()),
-                            );
-                          } else if (index == 2) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => SecurityScreen()),
-                            );
-                          } else if (index == 3) { // New page for index 3
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => MalwareScreen()),
-                            );
-                          }
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(5), // Padding for the border
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.cyan, width: 4), // Border color
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16), // Smaller border radius inside
-                            child: Image.asset(
-                              imgList[index],  // Use image from imgList
-                              fit: BoxFit.cover, // Ensure the image covers the entire grid item
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(10), // Padding for the container
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: Colors.cyan, width: 2), // Border color
+                            ),
+                            child: Row(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(16), // Smaller border radius inside
+                                  child: Image.asset(
+                                    imgList[index],  // Use image from imgList
+                                    width: 80,
+                                    height: 80,
+                                    fit: BoxFit.cover, // Ensure the image covers the container
+                                  ),
+                                ),
+                                SizedBox(width: 20),
+                                Text(
+                                  titles[index],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontFamily: 'IBMPlexMono',
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
