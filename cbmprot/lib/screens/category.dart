@@ -23,10 +23,10 @@ class CategoryScreen extends StatelessWidget {
   ];
 
   final List<Widget> screens = [
-    QuizScreen(quizSet: Data.categories[0].quizSets[1] ),
-    MalwareScreen(),
-    SecurityScreen(),
-    MalwareScreen(),
+    QuizAttackScreen(quizSet: Data.categories[0].quizSets[0] ),
+    QuizAttackScreen(quizSet: Data.categories[1].quizSets[0] ),
+    QuizAttackScreen(quizSet: Data.categories[2].quizSets[0] ),
+    QuizAttackScreen(quizSet: Data.categories[3].quizSets[0] ),
   ];
 
   @override

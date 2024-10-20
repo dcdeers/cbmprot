@@ -3,234 +3,161 @@ import 'package:cbmprot/model/model.dart';
 class Data {
   static List<Category> categories = [
     Category(
-      name: 'Flutter',
-      image: 'assets/Flutter.png',
+      name: 'Attacks',
       quizSets: [
         QuizSet(
-          name: 'Quiz Set 1',
+          name: 'ATTACK',
           questions: [
             Question(
-              // question
-              'What is Flutter?',
-              // options
+              'Which of the following best describes a phishing attack?',
               [
-                'A UI framework',
-                'A programming language',
-                'An operating system',
-                'None of the above'
+                'Gaining unauthorized access to a network',
+                'Sending malicious emails to steal sensitive information',
+                'Infecting a system with ransomware',
+                'Overwhelming a website with traffic'
               ],
-              // index of correct answer
-              0,
+              1,
             ),
             Question(
-              'What language is Flutter written in?',
-              ['Dart', 'Java', 'Kotlin', 'C++'],
-              0,
-            ),
-            Question(
-              'What is hot reload in Flutter?',
+              'What is a DDoS attack?',
               [
-                'A feature for quickly seeing changes in code',
-                'A widget',
-                'A plugin',
-                'None of the above'
+                'Denial of Dynamic Service',
+                'Distributed Denial of Service',
+                'Data Distribution Overload System',
+                'Direct Database Overwrite System'
               ],
-              0,
+              1,
             ),
             Question(
-              'Which widget is used to display images in Flutter?',
-              ['Image', 'ImageView', 'ImageBox', 'ImageDisplay'],
-              0,
-            ),
-            Question(
-              'What is the purpose of MaterialApp widget in Flutter?',
+              'What is the main purpose of a Man-in-the-Middle (MitM) attack?',
               [
-                'To create a Material Design app',
-                'To define app theme',
-                'To handle app routing',
-                'None of the above'
+                'To steal user passwords',
+                'To intercept communication between two parties',
+                'To delete important data from a server',
+                'To encrypt user files for ransom'
               ],
-              0,
+              1,
             ),
-            Question(
-              'What is a StatefulWidget in Flutter?',
-              [
-                'A widget with mutable state',
-                'A static widget',
-                'A stateless widget',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the purpose of setState() method in Flutter?',
-              [
-                'To update the state of a StatefulWidget',
-                'To build the UI',
-                'To navigate to another screen',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the purpose of Scaffold widget in Flutter?',
-              [
-                'To implement basic material design layout structure',
-                'To handle user input',
-                'To display images',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the main function in Flutter?',
-              [
-                'Entry point of the app',
-                'To define app theme',
-                'To define app routing',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the purpose of pubspec.yaml file in Flutter project?',
-              [
-                'To define project dependencies',
-                'To define UI layout',
-                'To define app theme',
-                'None of the above'
-              ],
-              0,
-            ),
-          ],
-        ),
-        QuizSet(
-          name: 'Quiz Set 2',
-          questions: [
-            Question(
-              'What is a widget in Flutter?',
-              [
-                'A building block of the user interface',
-                'A programming language',
-                'A UI framework',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the purpose of StatelessWidget in Flutter?',
-              [
-                'To represent immutable UI',
-                'To handle user input',
-                'To manage app state',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the difference between hot reload and hot restart in Flutter?',
-              [
-                'Hot reload updates the UI without restarting the app',
-                'Hot restart restarts the app',
-                'They are the same',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the purpose of the Material class in Flutter?',
-              [
-                'To implement Material Design',
-                'To define app theme',
-                'To manage app routing',
-                'None of the above'
-              ],
-              0,
-            ),
-            Question(
-              'What is the purpose of Cupertino widgets in Flutter?',
-              [
-                'To implement iOS-style UI',
-                'To handle user input',
-                'To display images',
-                'None of the above'
-              ],
-              0,
-            ),
-          ],
-        ),
-        // Add more quiz sets for Flutter
-      ],
-    ),
-    Category(
-      name: 'React Native',
-      image: 'assets/React Native.png',
-      quizSets: [
-        QuizSet(
-          name: 'Quiz Set 1',
-          questions: [
-            // Add questions for Quiz Set 1 of React Native
-          ],
-        ),
-        QuizSet(
-          name: 'Quiz Set 2',
-          questions: [
-            // Add questions for Quiz Set 2 of React Native
-          ],
-        ),
-        QuizSet(
-          name: 'Quiz Set 3',
-          questions: [
-            // Add questions for Quiz Set 3 of React Native
           ],
         ),
       ],
     ),
     Category(
-      name: 'Python',
-      image: 'assets/Python.png',
+      name: 'Malware',
       quizSets: [
         QuizSet(
-          name: 'Quiz Set 1',
+          name: 'malware',
           questions: [
-            // Add questions for Quiz Set 1 of Python
-          ],
-        ),
-        QuizSet(
-          name: 'Quiz Set 2',
-          questions: [
-            // Add questions for Quiz Set 2 of Python
-          ],
-        ),
-        QuizSet(
-          name: 'Quiz Set 3',
-          questions: [
-            // Add questions for Quiz Set 3 of Python
+            Question(
+              'What is ransomware?',
+              [
+                'Software designed to destroy data',
+                'Malicious software that demands payment to decrypt files',
+                'A program that monitors keystrokes',
+                'A harmless software update'
+              ],
+              1,
+            ),
+            Question(
+              'Which of the following is NOT a type of malware?',
+              [
+                'Worm',
+                'Trojan horse',
+                'Firewall',
+                'Spyware'
+              ],
+              2,
+            ),
+            Question(
+              'What does spyware do?',
+              [
+                'Encrypts data for ransom',
+                'Tracks and collects user information without consent',
+                'Attacks other computers on the network',
+                'Blocks unauthorized access to a network'
+              ],
+              1,
+            ),
           ],
         ),
       ],
     ),
-    // Add more categories with quiz sets and questions
     Category(
-      name: 'C#',
-      image: 'assets/C#.png',
+      name: 'Security',
       quizSets: [
         QuizSet(
-          name: 'Quiz Set 1',
+          name: 'sec',
           questions: [
-            // Add questions for Quiz Set 1 of Python
+            Question(
+              'What is the purpose of a firewall?',
+              [
+                'To physically protect servers from fire',
+                'To encrypt communications between computers',
+                'To prevent unauthorized access to or from a private network',
+                'To scan for viruses'
+              ],
+              2,
+            ),
+            Question(
+              'Which of the following is a primary function of an Intrusion Detection System (IDS)?',
+              [
+                'Prevent malicious activity',
+                'Detect and alert on suspicious activity',
+                'Encrypt network traffic',
+                'Block all incoming connections'
+              ],
+              1,
+            ),
+            Question(
+              'What does a VPN do?',
+              [
+                'Scans for malware',
+                'Creates a secure, encrypted connection over the internet',
+                'Blocks all unauthorized incoming traffic',
+                'Increases the speed of internet connections'
+              ],
+              1,
+            ),
           ],
         ),
+      ],
+    ),
+    Category(
+      name: 'Ports',
+      quizSets: [
         QuizSet(
-          name: 'Quiz Set 2',
+          name: 'port',
           questions: [
-            // Add questions for Quiz Set 2 of Python
-          ],
-        ),
-        QuizSet(
-          name: 'Quiz Set 3',
-          questions: [
-            // Add questions for Quiz Set 3 of Python
+            Question(
+              'Which port number is typically used for HTTP?',
+              [
+                '80',
+                '443',
+                '21',
+                '25'
+              ],
+              0,
+            ),
+            Question(
+              'Which protocol is commonly used on port 443?',
+              [
+                'FTP',
+                'SSH',
+                'HTTPS',
+                'SMTP'
+              ],
+              2,
+            ),
+            Question(
+              'What service uses port 22 by default?',
+              [
+                'Telnet',
+                'SSH',
+                'SMTP',
+                'HTTP'
+              ],
+              1,
+            ),
           ],
         ),
       ],
