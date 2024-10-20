@@ -1,4 +1,5 @@
-import 'package:cbmprot/screens/attacks.dart';
+import 'package:cbmprot/contextdata/data.dart';
+import 'package:cbmprot/quizscreens/quizattackscreen.dart';
 import 'package:cbmprot/screens/malware.dart';
 import 'package:cbmprot/screens/security.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class CategoryScreen extends StatelessWidget {
   ];
 
   final List<Widget> screens = [
-    AttackScreen(),
+    QuizScreen(quizSet: Data.categories[0].quizSets[1] ),
     MalwareScreen(),
     SecurityScreen(),
     MalwareScreen(),
