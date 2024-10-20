@@ -1,7 +1,5 @@
 import 'package:cbmprot/contextdata/data.dart';
 import 'package:cbmprot/quizscreens/quizattackscreen.dart';
-import 'package:cbmprot/screens/malware.dart';
-import 'package:cbmprot/screens/security.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 

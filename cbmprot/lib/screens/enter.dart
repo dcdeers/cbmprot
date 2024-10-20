@@ -1,4 +1,4 @@
-import 'package:cbmprot/screens/home.dart';
+import 'package:cbmprot/screens/homepage.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
