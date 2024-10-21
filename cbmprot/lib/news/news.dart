@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class CybersecurityNewsScreen extends StatefulWidget {
   @override
@@ -11,7 +10,7 @@ class CybersecurityNewsScreen extends StatefulWidget {
 
 class _CybersecurityNewsScreenState extends State<CybersecurityNewsScreen> {
   List articles = [];
-  String apiKey = 'YOUR_NEWS_API_KEY'; // Replace with your API Key
+  String apiKey = 'b2faf2a3a24d48b4acdf520a2b03edb6'; // Replace with your API Key
 
   @override
   void initState() {
@@ -70,51 +69,21 @@ class _CybersecurityNewsScreenState extends State<CybersecurityNewsScreen> {
   }
 }
 
-class NewsDetailScreen extends StatefulWidget {
+class NewsDetailScreen extends StatelessWidget {
   final String url;
   final String title;
 
   NewsDetailScreen({required this.url, required this.title});
 
   @override
-  _NewsDetailScreenState createState() => _NewsDetailScreenState();
-}
-
-class _NewsDetailScreenState extends State<NewsDetailScreen> {
-  late WebViewController _controller;
-  bool isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = WebViewController();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
         backgroundColor: Colors.black,
       ),
-      body: Stack(
-        children: [
-          WebView(
-            initialUrl: widget.url,
-            javascriptMode: JavascriptMode.unrestricted,
-            onWebViewCreated: (controller) {
-              _controller = controller;
-            },
-            onPageFinished: (finish) {
-              setState(() {
-                isLoading = false;
-              });
-            },
-          ),
-          isLoading
-              ? Center(child: CircularProgressIndicator())
-              : Stack(),
-        ],
+      body: Center(
+        child: Text('Open in a webview: $url'), // Replace with a WebView if needed
       ),
     );
   }

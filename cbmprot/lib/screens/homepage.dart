@@ -1,6 +1,7 @@
 import 'package:cbmprot/screens/category.dart';
 import 'package:cbmprot/screens/learnscreen.dart';
-import 'package:cbmprot/screens/news.dart';
+import 'package:cbmprot/news/news.dart';
+import 'package:cbmprot/screens/password.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -111,7 +112,7 @@ class HomePage extends StatelessWidget {
                     } else if (index == 5) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CategoryScreen()), // Replace with your actual screen
+                        MaterialPageRoute(builder: (context) => PasswordComparisonScreen()), // Replace with your actual screen
                       );
                     }
                   },
