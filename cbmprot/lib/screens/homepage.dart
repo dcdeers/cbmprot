@@ -1,5 +1,6 @@
 import 'package:cbmprot/screens/category.dart';
 import 'package:cbmprot/screens/learnscreen.dart';
+import 'package:cbmprot/screens/news.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -12,6 +13,8 @@ class HomePage extends StatelessWidget {
     'TIPS',
     'LEARN',
     'NEWS',
+    'VIDEOS',
+    'TOOLS',
   ];
 
   List<Icon> catIcons = [
@@ -19,13 +22,18 @@ class HomePage extends StatelessWidget {
     Icon(LineAwesomeIcons.clipboard_check_solid, color: Colors.white, size: 80),
     Icon(LineAwesomeIcons.brain_solid, color: Colors.white, size: 80),
     Icon(LineAwesomeIcons.newspaper_solid, color: Colors.white, size: 80),
+    Icon(LineAwesomeIcons.video_solid, color: Colors.white, size: 80),
+    Icon(LineAwesomeIcons.toolbox_solid, color: Colors.white, size: 80),
   ];
 
+  // Make sure imgList matches the length of catNames and catIcons if used
   List<String> imgList = [
     '3',
     '4',
     '5',
     '6',
+    '7',
+    '8',
   ];
 
   @override
@@ -43,94 +51,99 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 10),
+            padding: EdgeInsets.all(15),
             decoration: BoxDecoration(
-              color: Colors.green, // Ensure the top container background is also black
+              color: Colors.green, // Ensure the top container background is green
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 3),
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.zero,
-                    child: Text(
-                      "CYBERMIND",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 63,
-                        fontFamily: 'IBMPlexMono',
-                        letterSpacing: 2.0, // Adjust the value for more or less spacing
-                      ),
-                    ),
-                  ),
+            child: Center(
+              child: Text(
+                "CYBERMIND",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 63,
+                  fontFamily: 'IBMPlexMono',
+                  letterSpacing: 2.0, // Adjust the value for more or less spacing
                 ),
-              ],
+              ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 20, left: 15, right: 15),
-            child: Column(
-              children: [
-                SizedBox(height: 20),
-                GridView.builder(
-                  
-                  itemCount: imgList.length,
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // Number of columns
-                    childAspectRatio: 1, // 1 for square items
-                    mainAxisSpacing: 40,
-                    crossAxisSpacing: 20,
-                  ),
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        // Navigate to different pages based on the index
-                        if (index == 0) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => CategoryScreen()),
-                          );
-                        } else if (index == 2) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => LearnScreen()),
-                          );
-                        }
-                        // Add more conditions for other indexes
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.green,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: catIcons[index],
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              catNames[index],
-                              style: TextStyle(
-                                fontFamily: 'IBMPlexMono',
-                                fontSize: 23,
-                                color: Colors.cyanAccent,
-                                letterSpacing: 2.0, // Adjust the value for more or less spacing
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
+            padding: EdgeInsets.all(15),
+            child: GridView.builder(
+              itemCount: catNames.length, // Make sure it matches the length of all lists
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // Number of columns
+                childAspectRatio: 1, // 1 for square items
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+              ),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    // Navigate to different pages based on the index
+                    if (index == 0) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CategoryScreen()),
+                      );
+                    } else if (index == 1) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CategoryScreen()), // Replace with your actual screen
+                      );
+                    } else if (index == 2) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LearnScreen()),
+                      );
+                    } else if (index == 3) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CybersecurityNewsScreen()), // Replace with your actual screen
+                      );
+                    } else if (index == 4) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CategoryScreen()), // Replace with your actual screen
+                      );
+                    } else if (index == 5) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CategoryScreen()), // Replace with your actual screen
+                      );
+                    }
                   },
-                ),
-              ],
+
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.green,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                          child: catIcons[index],
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          catNames[index],
+                          style: TextStyle(
+                            fontFamily: 'IBMPlexMono',
+                            fontSize: 23,
+                            color: Colors.cyanAccent,
+                            letterSpacing: 2.0, // Adjust the value for more or less spacing
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ],
