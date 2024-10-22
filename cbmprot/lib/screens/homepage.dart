@@ -1,3 +1,4 @@
+import 'package:cbmprot/safety.dart';
 import 'package:cbmprot/screens/category.dart';
 import 'package:cbmprot/screens/learnscreen.dart';
 import 'package:cbmprot/news/news.dart';
@@ -92,7 +93,7 @@ class HomePage extends StatelessWidget {
                     } else if (index == 1) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CategoryScreen()), // Replace with your actual screen
+                        MaterialPageRoute(builder: (context) => AwarenessScreen()), // Replace with your actual screen
                       );
                     } else if (index == 2) {
                       Navigator.push(

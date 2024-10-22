@@ -1,98 +1,100 @@
-// import 'package:cbmprot/screens/learnscreen.dart';
-// import 'package:flutter/material.dart';
-
-// class AttackScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Simple ListView'),
-//       ),
-//       body: ListView(
-//         children: <Widget>[
-//           _buildListItem('Item 1', () {
-//             print('Item 1 tapped');
-//           }),
-//           _buildListItem('Item 2', () {
-//             print('Item 2 tapped');
-//           }),
-//           _buildListItem('Item 3', () {
-//             print('Item 3 tapped');
-//           }),
-//           _buildListItem('Item 4', () {
-//             print('Item 4 tapped');
-//           }),
-//         ],
-//       ),
-//     );
-//   }
-
-//   // Helper function to build each list item
-//   Widget _buildListItem(String title, Function() onTap) {
-//     return ListTile(
-//       title: Text(title),
-//       onTap: onTap,
-//     );
-//   }
-// }
-
-// void main() {
-//   runApp(MaterialApp(
-//     home: LearnScreen(),
-//   ));
-// }
-
-
-import 'package:cbmprot/learnonclickdata/attacksdata.dart';
+import 'package:cbmprot/learnonclickdata/attacksdata/attacksdata1.dart';
+import 'package:cbmprot/learnonclickdata/attacksdata/attacksdata2.dart';
+import 'package:cbmprot/learnonclickdata/attacksdata/attacksdata3.dart';
+import 'package:cbmprot/learnonclickdata/attacksdata/attacksdata4.dart';
+import 'package:cbmprot/learnonclickdata/attacksdata/attacksdata5.dart';
+import 'package:cbmprot/learnonclickdata/attacksdata/attacksdata6.dart';
 import 'package:flutter/material.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class AttackScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Set background to black
+
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
+        title: Padding(
+          padding: const EdgeInsets.only(top: 8), // Padding to move the text down
+          child: const Text(
+            'Back', // Title text
+            style: TextStyle(
+              fontSize: 20, // Change the font size
+              fontFamily: 'IBMPlexMono', // Use your custom font family
+              color: Colors.white, // Text color
+            ),
+          ),
+        ),
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.black, // Customize as needed
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.cyanAccent),
+          icon: const Icon(
+            LineAwesomeIcons.long_arrow_alt_left_solid,
+            size: 50,
+          ), // Line Awesome icon with size change
           onPressed: () {
             Navigator.pop(context); // Go back to the previous screen
           },
         ),
       ),
+      
+      backgroundColor: Colors.black, // Set background to black
       body: Padding(
         padding: const EdgeInsets.all(20.0), // Add padding around the buttons
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch, // Make buttons stretch full width
           children: <Widget>[
-            
+            // Add image at the top of the list
+            Container(
+              height: 150,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/CATTACK.png'), // Replace with your image path
+                
+                ),
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+            SizedBox(height: 20),
             _buildListItem('Phishing', () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PhishingDefinitionScreen()),
               );
             }),
-
             SizedBox(height: 20),
             _buildListItem('Impersonation', () {
-              print('Impersonation tapped');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ImpersonationDefinitionScreen()),
+              );
             }),
             SizedBox(height: 20),
             _buildListItem('Hoaxes', () {
-              print('Hoaxes tapped');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HoaxesDefinitionScreen()),
+              );
             }),
             SizedBox(height: 20),
             _buildListItem('Social Engineering', () {
-              print('Social Engineering tapped');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SocialEngineeringDefinitionScreen()),
+              );
             }),
             SizedBox(height: 20),
             _buildListItem('Man-in-the-Middle Attack', () {
-              print('Man-in-the-Middle Attack tapped');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MitmDefinitionScreen()),
+              );
             }),
             SizedBox(height: 20),
-            _buildListItem('Client Hijacking', () {
-              print('Client Hijacking tapped');
+            _buildListItem('Client Highjacking', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ClientHijackingDefinitionScreen()),
+              );
             }),
           ],
         ),
