@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
     'LEARN',
     'NEWS',
     'VIDEOS',
-    'TOOLS',
+    'COMPARER',
   ];
 
   List<Icon> catIcons = [
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
     Icon(LineAwesomeIcons.brain_solid, color: Colors.white, size: 80),
     Icon(LineAwesomeIcons.newspaper_solid, color: Colors.white, size: 80),
     Icon(LineAwesomeIcons.video_solid, color: Colors.white, size: 80),
-    Icon(LineAwesomeIcons.toolbox_solid, color: Colors.white, size: 80),
+    Icon(LineAwesomeIcons.fingerprint_solid, color: Colors.white, size: 80),
   ];
 
   // Make sure imgList matches the length of catNames and catIcons if used
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(15.0),
             child: Image.asset(
               'images/2.png', // Replace with your image path
               width: 130, // Set the desired width for the image
@@ -52,9 +52,9 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Colors.green, // Ensure the top container background is green
+              color: Colors.black, // Ensure the top container background is green
             ),
             child: Center(
               child: Text(
@@ -121,7 +121,8 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.green,
+                      border: Border.all(color: Colors.white, width: 4),
+                      color: Color.fromRGBO(0, 194, 203, 100),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -136,7 +137,7 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'IBMPlexMono',
                             fontSize: 23,
-                            color: Colors.cyanAccent,
+                            color: Colors.white,
                             letterSpacing: 2.0, // Adjust the value for more or less spacing
                           ),
                         ),

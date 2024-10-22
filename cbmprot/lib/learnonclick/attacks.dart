@@ -43,6 +43,7 @@
 // }
 
 
+import 'package:cbmprot/learnonclickdata/attacksdata.dart';
 import 'package:flutter/material.dart';
 
 class AttackScreen extends StatelessWidget {
@@ -65,9 +66,14 @@ class AttackScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch, // Make buttons stretch full width
           children: <Widget>[
+            
             _buildListItem('Phishing', () {
-              print('Phishing tapped');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PhishingDefinitionScreen()),
+              );
             }),
+
             SizedBox(height: 20),
             _buildListItem('Impersonation', () {
               print('Impersonation tapped');
