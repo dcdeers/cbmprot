@@ -1,4 +1,4 @@
-import 'package:cbmprot/safety.dart';
+import 'package:cbmprot/screens/safety.dart';
 import 'package:cbmprot/screens/category.dart';
 import 'package:cbmprot/screens/learnscreen.dart';
 import 'package:cbmprot/news/news.dart';

@@ -16,6 +16,7 @@ class AttackScreen extends StatelessWidget {
         title: Padding(
           padding: const EdgeInsets.only(top: 8), // Padding to move the text down
           child: const Text(
+            
             'Back', // Title text
             style: TextStyle(
               fontSize: 20, // Change the font size
@@ -110,6 +111,7 @@ class AttackScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20), // Make button taller
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15), // Rounded corners
+          
         ),
       ),
       onPressed: onTap,

@@ -19,14 +19,34 @@ class Data {
               1,
             ),
             Question(
-              'What is a DDoS attack?',
+              'What is impersonation in a cyberattack context?',
               [
-                'Denial of Dynamic Service',
-                'Distributed Denial of Service',
-                'Data Distribution Overload System',
-                'Direct Database Overwrite System'
+                'Gaining access to a system by pretending to be someone else',
+                'Overloading a server with requests',
+                'Encrypting data for ransom',
+                'Scanning a network for vulnerabilities'
+              ],
+              0,
+            ),
+            Question(
+              'What are hoaxes in the context of cybersecurity?',
+              [
+                'Malicious software designed to encrypt files',
+                'Fake warnings or messages intended to deceive users',
+                'Attempts to guess passwords through brute force',
+                'Redirecting users to malicious websites'
               ],
               1,
+            ),
+            Question(
+              'Which of the following best describes social engineering?',
+              [
+                'Manipulating individuals into divulging confidential information',
+                'Intercepting network traffic between two parties',
+                'Encrypting a user\'s files and demanding a ransom',
+                'Flooding a network with illegitimate traffic'
+              ],
+              0,
             ),
             Question(
               'What is the main purpose of a Man-in-the-Middle (MitM) attack?',
@@ -38,10 +58,62 @@ class Data {
               ],
               1,
             ),
+            Question(
+              'What is client hijacking?',
+              [
+                'Taking control of a client\'s session to gain unauthorized access',
+                'Sending phishing emails to steal sensitive information',
+                'Infecting a system with ransomware',
+                'Intercepting network traffic for malicious purposes'
+              ],
+              0,
+            ),
+            Question(
+              'Which attack involves manipulating users into divulging sensitive information?',
+              [
+                'Phishing',
+                'Social Engineering',
+                'Man-in-the-Middle',
+                'Client Hijacking'
+              ],
+              1,
+            ),
+            Question(
+              'Which of the following is an example of impersonation?',
+              [
+                'Pretending to be a legitimate user to gain access',
+                'Injecting malicious code into a web application',
+                'Encrypting files and demanding payment',
+                'Monitoring network traffic'
+              ],
+              0,
+            ),
+            Question(
+              'What is a common tactic used in social engineering attacks?',
+              [
+                'Creating a sense of urgency to pressure victims into acting',
+                'Using advanced encryption techniques to protect data',
+                'Intercepting wireless communications',
+                'Scanning ports to find vulnerabilities'
+              ],
+              0,
+            ),
+            Question(
+              'What is the main goal of a hoax in cybersecurity?',
+              [
+                'To trick users into taking unnecessary or harmful actions',
+                'To gain unauthorized access to a network',
+                'To encrypt files for ransom',
+                'To overwhelm a website with traffic'
+              ],
+              0,
+            ),
           ],
-        ),
+        )
       ],
     ),
+
+    
     Category(
       name: 'Malware',
       quizSets: [
