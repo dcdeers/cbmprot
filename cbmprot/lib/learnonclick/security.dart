@@ -126,6 +126,7 @@ class SecurityScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20), // Make button taller
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15), // Rounded corners
+          side: BorderSide(color: Colors.white, width: 3), // Border color and width
         ),
       ),
       onPressed: onTap,
@@ -134,6 +135,8 @@ class SecurityScreen extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Courier', // Monospace font to match the style
           fontSize: 24, // Font size to match the screenshot
+          letterSpacing: 1.5, // Adjust the value for more or less spacing
+          fontWeight: FontWeight.bold, // Monospace font to match the style
           color: Colors.black, // Text color
         ),
       ),

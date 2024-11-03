@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
     'TIPS',
     'LEARN',
     'NEWS',
-    'VIDEOS',
+    // 'VIDEOS',
     'COMPARER',
   ];
 
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
     Icon(LineAwesomeIcons.clipboard_check_solid, color: Colors.white, size: 80),
     Icon(LineAwesomeIcons.brain_solid, color: Colors.white, size: 80),
     Icon(LineAwesomeIcons.newspaper_solid, color: Colors.white, size: 80),
-    Icon(LineAwesomeIcons.video_solid, color: Colors.white, size: 80),
+    // Icon(LineAwesomeIcons.video_solid, color: Colors.white, size: 80),
     Icon(LineAwesomeIcons.fingerprint_solid, color: Colors.white, size: 80),
   ];
 
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
     '4',
     '5',
     '6',
-    '7',
+    // '7',
     '8',
   ];
 
@@ -105,12 +105,12 @@ class HomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(builder: (context) => CybersecurityNewsScreen()), // Replace with your actual screen
                       );
+                    // } else if (index == 4) {
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context) => CategoryScreen()), // Replace with your actual screen
+                    //   );
                     } else if (index == 4) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CategoryScreen()), // Replace with your actual screen
-                      );
-                    } else if (index == 5) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => PasswordComparisonScreen()), // Replace with your actual screen

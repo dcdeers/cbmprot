@@ -111,6 +111,7 @@ class AttackScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20), // Make button taller
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15), // Rounded corners
+          side: BorderSide(color: Colors.white, width: 3), // Border color and width
           
         ),
       ),
