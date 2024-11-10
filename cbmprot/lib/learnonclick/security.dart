@@ -12,22 +12,10 @@ class SecurityScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black, // Set background to black
-      // appBar: AppBar(
-      //   backgroundColor: Colors.black,
-      //   elevation: 0,
-      //   leading: IconButton(
-      //     icon: Icon(Icons.arrow_back, color: Colors.cyanAccent),
-      //     onPressed: () {
-      //       Navigator.pop(context); // Go back to the previous screen
-      //     },
-      //   ),
-      // ),
-
-            appBar: AppBar(
+      appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.only(top: 8), // Padding to move the text down
           child: const Text(
-            
             'Back', // Title text
             style: TextStyle(
               fontSize: 20, // Change the font size
@@ -48,28 +36,24 @@ class SecurityScreen extends StatelessWidget {
           },
         ),
       ),
-      
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0), // Add padding around the buttons
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch, // Make buttons stretch full width
           children: <Widget>[
-
             // Add image at the top of the list
             Container(
               height: 150,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('images/SCOM.png'), // Replace with your image path
-                
                 ),
                 borderRadius: BorderRadius.circular(15),
               ),
             ),
-
             SizedBox(height: 20),
             _buildListItem('Firewall', () {
-               Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => FirewallDefinitionScreen()),
               );
@@ -88,7 +72,6 @@ class SecurityScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => ProxyDefinitionScreen()),
               );
             }),
-
             SizedBox(height: 20),
             _buildListItem('Security Software', () {
               Navigator.push(
@@ -96,15 +79,13 @@ class SecurityScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => SecuritySoftwareDefinitionScreen()),
               );
             }),
-
-              SizedBox(height: 20),
+            SizedBox(height: 20),
             _buildListItem('Data Loss Prevention', () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => DataLossPreventionDefinitionScreen()),
               );
             }),
-
             SizedBox(height: 20),
             _buildListItem('Mobile Connection Methods', () {
               Navigator.push(

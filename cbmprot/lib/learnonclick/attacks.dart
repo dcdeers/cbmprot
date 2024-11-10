@@ -11,12 +11,10 @@ class AttackScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.only(top: 8), // Padding to move the text down
           child: const Text(
-            
             'Back', // Title text
             style: TextStyle(
               fontSize: 20, // Change the font size
@@ -37,9 +35,8 @@ class AttackScreen extends StatelessWidget {
           },
         ),
       ),
-      
       backgroundColor: Colors.black, // Set background to black
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0), // Add padding around the buttons
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch, // Make buttons stretch full width
@@ -50,7 +47,6 @@ class AttackScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('images/CATTACK.png'), // Replace with your image path
-                
                 ),
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -112,7 +108,6 @@ class AttackScreen extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15), // Rounded corners
           side: BorderSide(color: Colors.white, width: 3), // Border color and width
-          
         ),
       ),
       onPressed: onTap,

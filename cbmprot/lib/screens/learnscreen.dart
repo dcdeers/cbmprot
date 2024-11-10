@@ -10,8 +10,7 @@ class LearnScreen extends StatelessWidget {
   final List<String> imgList = [
     'images/CATTACK.png',  // Path to your image
     'images/MALWARE.png',  // Path to your image
-    'images/SCOM.png',     // Path to your image
-    'images/COMPORT.png',  // Path to your image
+    'images/SCOM.png',     // Path to your image (this will be removed from the grid)
   ];
 
   @override
@@ -65,19 +64,13 @@ class LearnScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 10),
-              decoration: BoxDecoration(
-                color: Colors.black, // Ensure the top container background is also black
-              ),
-            ),
             Padding(
-              padding: EdgeInsets.only(top: 20, left: 15, right: 15),
+              padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
               child: Column(
                 children: [
                   SizedBox(height: 20),
                   GridView.builder(
-                    itemCount: imgList.length,
+                    itemCount: imgList.length - 1, // Reduce item count to exclude last image (Security Component)
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside GridView
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -95,17 +88,7 @@ class LearnScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(builder: (context) => AttackScreen()),
                             );
-                          } else if (index == 1) { // New page for index 1
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => MalwareScreen()),
-                            );
-                          } else if (index == 2) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => SecurityScreen()),
-                            );
-                          } else if (index == 3) { // New page for index 3
+                          } else if (index == 1) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => MalwareScreen()),
@@ -128,6 +111,33 @@ class LearnScreen extends StatelessWidget {
                         ),
                       );
                     },
+                  ),
+                  // Add an extra spacing and center the security component
+                  SizedBox(height: 30),
+                  Center(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SecurityScreen()),
+                        );
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.45, // Adjusted width to center it properly
+                        padding: EdgeInsets.all(5), // Padding for the border
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.cyan, width: 4), // Border color
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16), // Smaller border radius inside
+                          child: Image.asset(
+                            'images/SCOM.png',  // Use Security Component image
+                            fit: BoxFit.cover, // Ensure the image covers the entire grid item
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
