@@ -10,21 +10,21 @@ class CategoryScreen extends StatelessWidget {
     'images/3.png',  // Path to your image
     'images/4.png',  // Path to your image
     'images/5.png',     // Path to your image
-    'images/6.png',  // Path to your image
+    // 'images/6.png',  // Path to your image
   ];
 
   final List<String> titles = [
     'Attack Types',
     'Malware',
     'Security Components',
-    'Common Ports',
+    // 'Common Ports',
   ];
 
   final List<Widget> screens = [
     QuizAttackScreen(quizSet: Data.categories[0].quizSets[0] ),
     QuizAttackScreen(quizSet: Data.categories[1].quizSets[0] ),
     QuizAttackScreen(quizSet: Data.categories[2].quizSets[0] ),
-    QuizAttackScreen(quizSet: Data.categories[3].quizSets[0] ),
+    // QuizAttackScreen(quizSet: Data.categories[3].quizSets[0] ),
   ];
 
   @override
