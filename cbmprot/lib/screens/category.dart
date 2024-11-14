@@ -31,17 +31,17 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.only(top: 8), // Padding to move the text down
-          child: const Text(
-            'Back', // Title text
-            style: TextStyle(
-              fontSize: 20, // Change the font size
-              fontFamily: 'IBMPlexMono', // Use your custom font family
-              color: Colors.white, // Text color
-            ),
-          ),
-        ),
+        // title: Padding(
+        //   padding: const EdgeInsets.only(top: 8), // Padding to move the text down
+        //   child: const Text(
+        //     'Back', // Title text
+        //     style: TextStyle(
+        //       fontSize: 20, // Change the font size
+        //       fontFamily: 'IBMPlexMono', // Use your custom font family
+        //       color: Colors.white, // Text color
+        //     ),
+        //   ),
+        // ),
         foregroundColor: Colors.white,
         backgroundColor: Colors.black, // Customize as needed
         leading: IconButton(

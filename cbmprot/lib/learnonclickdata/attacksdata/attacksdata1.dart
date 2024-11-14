@@ -5,9 +5,17 @@ class PhishingDefinitionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Phishing', style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold, color: Colors.white)),
+        title: Text(
+          'Phishing',
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Colors.black,
         centerTitle: true,
+        foregroundColor: Colors.white, // Back button color set to white
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -25,8 +33,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Text(textAlign: TextAlign.justify,
-                "Phishing is a type of cyber attack where attackers send malicious emails, pretending to be a trusted entity to steal sensitive information such as login credentials or financial details",
+              Text(
+                "Phishing is a type of cyber attack where attackers send malicious emails, pretending to be a trusted entity to steal sensitive information such as login credentials or financial details.",
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.white,
@@ -44,8 +53,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Text(textAlign: TextAlign.justify,
+              Text(
                 'Phishing attacks often start with an email or message that appears to come from a trusted source, such as a bank, online service, or even a friend. The attacker may include a link to a fake website designed to look like the legitimate one, where victims are tricked into entering their sensitive information. The attackers then use this information to access accounts, steal money, or commit other forms of fraud.',
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.white,
@@ -66,8 +76,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(textAlign: TextAlign.justify,
+                  Text(
                     '1. Spear Phishing: A targeted attack aimed at a specific individual or organization, often using personalized information to make the message more convincing.',
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -75,8 +86,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Text(textAlign: TextAlign.justify,
+                  Text(
                     '2. Whaling: A type of phishing attack aimed at high-profile targets like executives or senior management, often seeking significant information or financial transactions.',
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -84,8 +96,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Text(textAlign: TextAlign.justify,
+                  Text(
                     '3. Smishing: Phishing attacks conducted through SMS text messages, tricking users into clicking malicious links or sharing personal information.',
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -93,8 +106,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Text(textAlign: TextAlign.justify,
+                  Text(
                     '4. Vishing: Phishing conducted through voice calls, where attackers pretend to be from a trusted institution to extract sensitive information.',
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -117,8 +131,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(textAlign: TextAlign.justify,
+                  Text(
                     '1. An email that looks like its from your bank asking for your login information.',
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -126,8 +141,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Text(textAlign: TextAlign.justify,
+                  Text(
                     '2. A message pretending to be from a popular online service, asking you to verify your account details.',
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
@@ -135,8 +151,9 @@ class PhishingDefinitionScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Text(textAlign: TextAlign.justify,
+                  Text(
                     '3. An email claiming that you have won a prize and need to provide personal details to claim it.',
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,

@@ -8,6 +8,7 @@ class HoaxesDefinitionScreen extends StatelessWidget {
         title: Text('Hoaxes', style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold, color: Colors.white)),
         backgroundColor: Colors.black,
         centerTitle: true,
+        foregroundColor: Colors.white, // Back button color set to white
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
