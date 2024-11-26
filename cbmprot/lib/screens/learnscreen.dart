@@ -5,51 +5,39 @@ import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class LearnScreen extends StatelessWidget {
-  // Static data lists
-  // Replace the icons list with image asset paths
+
   final List<String> imgList = [
-    'images/CATTACK.png',  // Path to your image
-    'images/MALWARE.png',  // Path to your image
-    'images/SCOM.png',     // Path to your image (this will be removed from the grid)
+    'images/CATTACK.png',
+    'images/MALWARE.png',  
+    'images/SCOM.png',     
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Padding(
-        //   padding: const EdgeInsets.only(top: 8), // Padding to move the text down
-        //   child: const Text(
-        //     'Back', // Title text
-        //     style: TextStyle(
-        //       fontSize: 20, // Change the font size
-        //       fontFamily: 'IBMPlexMono', // Use your custom font family
-        //       color: Colors.white, // Text color
-        //     ),
-        //   ),
-        // ),
         foregroundColor: Colors.white,
-        backgroundColor: Colors.black, // Customize as needed
+        backgroundColor: Colors.black,
         leading: IconButton(
           icon: const Icon(
             LineAwesomeIcons.long_arrow_alt_left_solid,
             size: 50,
-          ), // Line Awesome icon with size change
+          ),
           onPressed: () {
-            Navigator.pop(context); // Go back to the previous screen
+            Navigator.pop(context);
           },
         ),
       ),
-      backgroundColor: Colors.black, // Set the background color to black
-      body: SingleChildScrollView(  // Use SingleChildScrollView
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(  
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Image.asset(
-                'images/2.png', // Replace with your image path
-                width: 130, // Set the desired width for the image
-                height: 130, // Set the desired height for the image
+                'images/2.png',
+                width: 130, 
+                height: 130, 
               ),
             ),
             Padding(
@@ -70,19 +58,19 @@ class LearnScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 20),
                   GridView.builder(
-                    itemCount: imgList.length - 1, // Reduce item count to exclude last image (Security Component)
+                    itemCount: imgList.length - 1, 
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside GridView
+                    physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // Number of columns
-                      childAspectRatio: 1, // 1 for square items
+                      crossAxisCount: 2,
+                      childAspectRatio: 1,
                       mainAxisSpacing: 40,
                       crossAxisSpacing: 20,
                     ),
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
-                          // Navigate to different pages based on the index
+                          
                           if (index == 0) {
                             Navigator.push(
                               context,
@@ -96,23 +84,23 @@ class LearnScreen extends StatelessWidget {
                           }
                         },
                         child: Container(
-                          padding: EdgeInsets.all(5), // Padding for the border
+                          padding: EdgeInsets.all(5), 
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.cyan, width: 4), // Border color
+                            border: Border.all(color: Colors.cyan, width: 4), 
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16), // Smaller border radius inside
+                            borderRadius: BorderRadius.circular(16), 
                             child: Image.asset(
-                              imgList[index],  // Use image from imgList
-                              fit: BoxFit.cover, // Ensure the image covers the entire grid item
+                              imgList[index],  
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
                       );
                     },
                   ),
-                  // Add an extra spacing and center the security component
+                  
                   SizedBox(height: 30),
                   Center(
                     child: InkWell(
@@ -123,17 +111,17 @@ class LearnScreen extends StatelessWidget {
                         );
                       },
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 0.45, // Adjusted width to center it properly
-                        padding: EdgeInsets.all(5), // Padding for the border
+                        width: MediaQuery.of(context).size.width * 0.45,
+                        padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.cyan, width: 4), // Border color
+                          border: Border.all(color: Colors.cyan, width: 4),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(16), // Smaller border radius inside
+                          borderRadius: BorderRadius.circular(16),
                           child: Image.asset(
-                            'images/SCOM.png',  // Use Security Component image
-                            fit: BoxFit.cover, // Ensure the image covers the entire grid item
+                            'images/SCOM.png',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

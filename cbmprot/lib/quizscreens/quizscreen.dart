@@ -43,17 +43,6 @@ class _QuizAttackScreenState extends State<QuizAttackScreen> {
     final Question currentQuestion = widget.quizSet.questions[currentQuestionIndex];
     return Scaffold(
       appBar: AppBar(
-        // title: Padding(
-        //   padding: const EdgeInsets.only(top: 8),
-        //   child: const Text(
-        //     'Back',
-        //     style: TextStyle(
-        //       fontSize: 20,
-        //       fontFamily: 'IBMPlexMono',
-        //       color: Colors.white,
-        //     ),
-        //   ),
-        // ),
         foregroundColor: Colors.white,
         backgroundColor: Colors.black,
         leading: IconButton(

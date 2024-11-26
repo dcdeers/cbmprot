@@ -4,66 +4,51 @@ import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class CategoryScreen extends StatelessWidget {
-  // Static data lists
-  // Replace the icons list with image asset paths
+
   final List<String> imgList = [
-    'images/3.png',  // Path to your image
-    'images/4.png',  // Path to your image
-    'images/5.png',     // Path to your image
-    // 'images/6.png',  // Path to your image
+    'images/3.png',
+    'images/4.png',  
+    'images/5.png',     
   ];
 
   final List<String> titles = [
     'Attack Types',
     'Malware',
     'Security Components',
-    // 'Common Ports',
   ];
 
   final List<Widget> screens = [
     QuizAttackScreen(quizSet: Data.categories[0].quizSets[0] ),
     QuizAttackScreen(quizSet: Data.categories[1].quizSets[0] ),
     QuizAttackScreen(quizSet: Data.categories[2].quizSets[0] ),
-    // QuizAttackScreen(quizSet: Data.categories[3].quizSets[0] ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Padding(
-        //   padding: const EdgeInsets.only(top: 8), // Padding to move the text down
-        //   child: const Text(
-        //     'Back', // Title text
-        //     style: TextStyle(
-        //       fontSize: 20, // Change the font size
-        //       fontFamily: 'IBMPlexMono', // Use your custom font family
-        //       color: Colors.white, // Text color
-        //     ),
-        //   ),
-        // ),
         foregroundColor: Colors.white,
-        backgroundColor: Colors.black, // Customize as needed
+        backgroundColor: Colors.black,
         leading: IconButton(
           icon: const Icon(
             LineAwesomeIcons.long_arrow_alt_left_solid,
             size: 50,
-          ), // Line Awesome icon with size change
+          ), 
           onPressed: () {
-            Navigator.pop(context); // Go back to the previous screen
+            Navigator.pop(context);
           },
         ),
       ),
-      backgroundColor: Colors.black, // Set the background color to black
-      body: SingleChildScrollView(  // Use SingleChildScrollView
+      backgroundColor: Colors.black, 
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Image.asset(
-                'images/2.png', // Replace with your image path
-                width: 130, // Set the desired width for the image
-                height: 130, // Set the desired height for the image
+                'images/2.png', 
+                width: 130, 
+                height: 130,
               ),
             ),
             Padding(
@@ -81,7 +66,7 @@ class CategoryScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 10),
               decoration: BoxDecoration(
-                color: Colors.black, // Ensure the top container background is also black
+                color: Colors.black,
               ),
             ),
             Padding(
@@ -92,7 +77,7 @@ class CategoryScreen extends StatelessWidget {
                   ListView.builder(
                     itemCount: imgList.length,
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside ListView
+                    physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 35.0),
@@ -104,21 +89,21 @@ class CategoryScreen extends StatelessWidget {
                             );
                           },
                           child: Container(
-                            padding: EdgeInsets.all(10), // Padding for the container
+                            padding: EdgeInsets.all(10), 
                             decoration: BoxDecoration(
                               color: Colors.black,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: Colors.cyan, width: 2), // Border color
+                              border: Border.all(color: Colors.cyan, width: 2), 
                             ),
                             child: Row(
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(16), // Smaller border radius inside
+                                  borderRadius: BorderRadius.circular(16),
                                   child: Image.asset(
-                                    imgList[index],  // Use image from imgList
+                                    imgList[index],  
                                     width: 80,
                                     height: 80,
-                                    fit: BoxFit.cover, // Ensure the image covers the container
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                                 SizedBox(width: 20),

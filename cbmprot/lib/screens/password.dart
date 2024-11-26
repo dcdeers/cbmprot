@@ -146,7 +146,6 @@ class _PasswordComparisonScreenState extends State<PasswordComparisonScreen> {
             FlutterPasswordStrength(
               password: password,
               strengthCallback: (strength) {
-                // Optional callback to get the strength value
               },
             ),
           ],

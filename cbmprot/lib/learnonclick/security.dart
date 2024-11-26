@@ -11,42 +11,31 @@ class SecurityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Set background to black
+      backgroundColor: Colors.black, 
       appBar: AppBar(
-        // title: Padding(
-        //   padding: const EdgeInsets.only(top: 8), // Padding to move the text down
-        //   child: const Text(
-        //     'Back', // Title text
-        //     style: TextStyle(
-        //       fontSize: 20, // Change the font size
-        //       fontFamily: 'IBMPlexMono', // Use your custom font family
-        //       color: Colors.white, // Text color
-        //     ),
-        //   ),
-        // ),
         foregroundColor: Colors.white,
-        backgroundColor: Colors.black, // Customize as needed
+        backgroundColor: Colors.black,
         leading: IconButton(
           icon: const Icon(
             LineAwesomeIcons.long_arrow_alt_left_solid,
             size: 50,
-          ), // Line Awesome icon with size change
+          ),
           onPressed: () {
-            Navigator.pop(context); // Go back to the previous screen
+            Navigator.pop(context); 
           },
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0), // Add padding around the buttons
+        padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch, // Make buttons stretch full width
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            // Add image at the top of the list
+            
             Container(
               height: 150,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('images/SCOM.png'), // Replace with your image path
+                  image: AssetImage('images/SCOM.png'), 
                 ),
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -99,26 +88,26 @@ class SecurityScreen extends StatelessWidget {
     );
   }
 
-  // Helper function to build each list item (styled as a button)
+  
   Widget _buildListItem(String title, Function() onTap) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.cyanAccent, // Button background color
-        padding: EdgeInsets.symmetric(vertical: 20), // Make button taller
+        backgroundColor: Colors.cyanAccent,
+        padding: EdgeInsets.symmetric(vertical: 20),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15), // Rounded corners
-          side: BorderSide(color: Colors.white, width: 3), // Border color and width
+          borderRadius: BorderRadius.circular(15),
+          side: BorderSide(color: Colors.white, width: 3),
         ),
       ),
       onPressed: onTap,
       child: Text(
         title,
         style: TextStyle(
-          fontFamily: 'Courier', // Monospace font to match the style
-          fontSize: 24, // Font size to match the screenshot
-          letterSpacing: 1.5, // Adjust the value for more or less spacing
-          fontWeight: FontWeight.bold, // Monospace font to match the style
-          color: Colors.black, // Text color
+          fontFamily: 'Courier',
+          fontSize: 24,
+          letterSpacing: 1.5,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
         ),
       ),
     );

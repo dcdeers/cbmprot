@@ -8,7 +8,7 @@ class SocialEngineeringDefinitionScreen extends StatelessWidget {
         title: Text('Social Engineering', style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold, color: Colors.white)),
         backgroundColor: Colors.black,
         centerTitle: true,
-        foregroundColor: Colors.white, // Back button color set to white
+        foregroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -154,9 +154,3 @@ class SocialEngineeringDefinitionScreen extends StatelessWidget {
     );
   }
 }
-
-// Usage example:
-// Navigator.push(
-//   context,
-//   MaterialPageRoute(builder: (context) => SocialEngineeringDefinitionScreen()),
-// );

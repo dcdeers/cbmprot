@@ -30,17 +30,6 @@ class ResultScreen extends StatelessWidget {
                 : "Awesome!";
     return Scaffold(
       appBar: AppBar(
-        // title: Padding(
-        //   padding: const EdgeInsets.only(top: 8),
-        //   child: const Text(
-        //     'Back',
-        //     style: TextStyle(
-        //       fontSize: 20,
-        //       fontFamily: 'IBMPlexMono',
-        //       color: Colors.white,
-        //     ),
-        //   ),
-        // ),
         foregroundColor: Colors.white,
         backgroundColor: Colors.black,
         leading: IconButton(
@@ -60,32 +49,7 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // SizedBox(height: 35),
-            // Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 15),
-            //   child: Row(
-            //     children: [
-            //       InkWell(
-            //         onTap: () {
-            //           Navigator.pop(context);
-            //         },
-            //         child: Icon(
-            //           LineAwesomeIcons.long_arrow_alt_left_solid,
-            //           color: Colors.white,
-            //           size: 30,
-            //         ),
-            //       ),
-            //       Text(
-            //         "Back",
-            //         style: TextStyle(
-            //           fontSize: 25,
-            //           fontWeight: FontWeight.w500,
-            //           color: Colors.white,
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+          
             SizedBox(height: 100),
             Center(
               child: Container(

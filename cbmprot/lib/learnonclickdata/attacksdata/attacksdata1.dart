@@ -15,7 +15,7 @@ class PhishingDefinitionScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
         centerTitle: true,
-        foregroundColor: Colors.white, // Back button color set to white
+        foregroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -170,9 +170,3 @@ class PhishingDefinitionScreen extends StatelessWidget {
     );
   }
 }
-
-// Usage example:
-// Navigator.push(
-//   context,
-//   MaterialPageRoute(builder: (context) => PhishingDefinitionScreen()),
-// );

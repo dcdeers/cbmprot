@@ -34,7 +34,7 @@ class _CybersecurityNewsScreenState extends State<CybersecurityNewsScreen> {
         ),
         backgroundColor: Colors.black,
         centerTitle: true,
-        foregroundColor: Colors.white, // Back button color set to white
+        foregroundColor: Colors.white,
       ),
       body: articles.isEmpty
           ? Center(child: CircularProgressIndicator())
